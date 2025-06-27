@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation Example</title>
+    <style>
+      /* Container for animated content */
+      .animation-container {
+        position: relative;
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0; /* Initially hidden */
+        transform: translateY(-50px); /* Start position above */
+        animation: fade-slide-in 2s ease-in-out forwards; /* Trigger animation */
+      }
+
+      /* Keyframes for fade and slide animation */
+      @keyframes fade-slide-in {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0); /* Final position */
+        }
+      }
+
+      h1 {
+        color: #0078D4;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #333;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animation-container">
+      <h1>Your Details have been Submitted!</h1>
+      <p>Thank you for reaching out.</p>
+    </div>
+  </body>
+</html>

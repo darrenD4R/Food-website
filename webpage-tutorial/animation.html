@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=deivce-width, intial-scale=1.0">
+	<title>ANIMATION</title>
+	<style>
+		body {
+			
+			margin: 0;
+			
+			background-color: #f4f4f4;
+			display:flex;
+			justify-content:center;
+			align-items: center;
+			height:100vh;
+		}
+		.bouncy-text {
+			display:flex;
+			font-size: 48px;
+			font-weight: bold;
+			color: #0078D4;
+		}
+		.bouncy-text span{
+			display: inline-block;
+			animation: bounce 1.5s infinite;
+			animation-delay: calc(var(--i) * 0.2s);
+		}
+		@keyframes bounce {
+			0%, 100% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(-20px);
+			}
+		}
+	</style>
+</head>
+		 <body>
+	<div class="bouncy-text">
+		<span style="--i: 0">D</span>
+		<span style="--i: 1">A</span>
+		<span style="--i: 2">V</span>
+		<span style="--i: 3">E</span>
+		<span style="--i: 4">N</span>
+		<span style="--i: 5">T</span>
+		<span style="--i: 6">I</span>
+		<span style="--i: 7">N</span>
+		<span style="--i: 8">A</span>
+		<span style="--i: 9">!</span>	
+		<p>				
+		<span style="--i: 10">D</span>
+		<span style="--i: 11">E</span>
+		<span style="--i: 12">L</span>
+		<span style="--i: 13">I</span>
+		<span style="--i: 14">C</span>
+		<span style="--i: 15">I</span>
+		<span style="--i: 16">O</span>
+		<span style="--i: 17">U</span>
+		<span style="--i: 18">S</span>
+		</p>
+		<span style="--i: 19">F</span>
+		<span style="--i: 20">O</span>
+		<span style="--i: 21">O</span>
+		<span style="--i: 22">D</span>
+		
+		<span style="--i: 23">D</span>
+		<span style="--i: 24">E</span>
+		<span style="--i: 25">L</span>
+		<span style="--i: 26">I</span>
+		<span style="--i: 27">V</span>
+		<span style="--i: 28">E</span>
+		<span style="--i: 29">R</span>
+		<span style="--i: 30">Y</span>
+
+		<span style="--i: 31">T</span>
+		<span style="--i: 32">O</span>
+		
+		<span style="--i: 33">Y</span>
+		<span style="--i: 34">O</span>
+		<span style="--i: 35">U</span>
+		<span style="--i: 36">R</span>
+		
+		<span style="--i: 37">D</span>
+		<span style="--i: 38">O</span>
+		<span style="--i: 39">O</span>
+		<span style="--i: 40">R</span>
+		
+		
+		</p>
+		
+		 <span style="--i: 0">Daventina food delivery service.
+		Delicious food delivered to your door! 
+		
+	</div>
+		</body>
+</html>

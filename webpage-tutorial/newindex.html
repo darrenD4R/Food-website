@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Food Delivery</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+		<style>
+			/* Styles */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+
+			header {
+				background-color: #690B22;
+				color: white;
+				padding: 20px;
+				text-align: center;
+			}
+
+			.bouncy-text {
+				display: flex;
+				font-size: 48px;
+				text-align: center;
+				font-weight: bold;
+				color: white;
+
+			}
+
+			.bouncy-text span {
+				display: inline-block;
+				animation: bounce 1.5s infinite;
+				animation-delay: calc(var(--i) * 0.2s);
+			}
+
+			@keyframes bounce {
+				0%, 100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-20px);
+				}
+			}
+
+			nav {
+				background-color: #333;
+				overflow: hidden;
+				text-align: center;
+			}
+
+			nav a {
+				float: left;
+				display: block;
+				text-align: center;
+				padding: 14px 20px;
+				color: white;
+				text-decoration: none;
+			}
+
+			nav a:hover {
+				background-color: #575757;
+			}
+
+			.featured {
+				padding: 20px;
+				text-align: center;
+			}
+
+			.featured h2 {
+				color: #690B22;
+			}
+
+			.dishes {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+
+			.dish {
+				background-color: white;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				width: 300px;
+				text-align: center;
+				padding: 20px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.dish img {
+				max-width: 100%;
+				border-radius: 8px;
+			}
+
+			footer {
+				background-color: #333;
+				color: white;
+				padding: 10px;
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			h1, p {
+				color: white;
+			}
+			.footer_socials{
+				color: #333;
+				
+			}
+			#contact-button {
+				background-color: #333;
+				color: white;
+				padding: 12px;
+				font-size: 17px;
+				border: none;
+				cursor: pointer;
+			}
+			.floating-button {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				z-index: 1000;
+				padding: 12px 20px;
+				background-color: #007bff;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.floating-button:hover {
+			    background-color: #0056b3;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="bouncy-text">
+				<span style="--i: 0">
+					<h1><p>Daventina's Kitchen</p></h1>
+					<p>Delicious food delivered to your door!</p>
+				</span>
+			</div>
+		</header>
+
+		<nav>
+			<!-- Button to toggle social icons -->
+<button id="contact-button" onclick="toggleSocials();">Contact Us</button>
+
+<!-- Social Icons -->
+<ul class="footer_socials" id="socialLinks" style="display: none;">
+    <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+    <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+    <li><a href="#"><i class="ri-whatsapp-fill"></i></a></li>
+</ul>
+				<a href="#" onclick="loadChima()">Menu</a>
+				<a href="nextpage.html" onclick="loadFd()">About Us</a>
+				<a href="hh.html" onclick="loadhh()">Place Your Order Here</a>
+				<button class="floating-button" onclick="toggleSocials();">Place Orders Here</button>			
+		</nav>
+
+		<div id="body">
+			<div class="featured">
+				<h2>Featured Dishes</h2>
+			</div>
+			<div class="dishes">
+				<div class="dish">
+					<img src="pasta.jpg" alt="Pasta">
+					<h3>Pasta</h3>
+					<p>$12.99</p>
+				</div>
+				<div class="dish">
+					<img src="grilledchicken.avif" alt="Grilled Chicken">
+					<h3>Grilled Chicken</h3>
+					<p>$15.99</p>
+				</div>
+				<div class="dish">
+					<img src="chineserice.avif" alt="Chinese Rice">
+					<h3>Chinese Rice</h3>
+					<p>$9.99</p>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>Daventina's Kitchen</p>
+		</span>	
+		</footer>
+
+		<script>
+			/* JavaScript Functions */
+			function loadNextPage() {
+				const x = new XMLHttpRequest();
+				x.onload = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById('body').innerHTML = this.responseText;
+					} else {
+						alert('The server returned an error: ' + this.status);
+					}
+				};
+				x.open('GET', 'nextpage.html', true);
+				x.send();
+			}
+
+			function loadChima() {
+				const x = new XMLHttpRequest();
+				x.onload = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById('body').innerHTML = this.responseText;
+					} else {
+						alert('The server returned an error: ' + this.status);
+					}
+				};
+				x.open('GET', 'Chima.html', true);
+				x.send();
+			}
+
+			function loadHh() {
+				const x = new XMLHttpRequest();
+				x.onload = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById('body').innerHTML = this.responseText;
+					} else {
+						alert('The server returned an error: ' + this.status);
+					}
+				};
+				x.open('GET', 'hh.html', true);
+				x.send();
+			}
+
+			function loadFd() {
+				const x = new XMLHttpRequest();
+				x.onload = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById('body').innerHTML = this.responseText;
+					} else {
+						alert('The server returned an error: ' + this.status);
+					}
+				};
+				x.open('GET', 'fd.html', true);
+				x.send();
+			}
+
+			function submitForm() {
+				const fullName = document.getElementById('name').value;
+				const emailAddress = document.getElementById('email').value;
+				const comments = document.getElementById('comments').value;
+
+				if (fullName === '' || fullName.length < 3) {
+					alert('You have not entered your full name');
+					return false;
+				}
+
+				if (emailAddress === '' || emailAddress.length < 3) {
+					alert('You have not entered your email address');
+					return false;
+				}
+
+				if (comments === '' || comments.length < 3) {
+					alert('You have not entered your comments');
+					return false;
+				}
+
+				alert('Submitting Form. Please wait...');
+				return true;
+			}
+
+  			function toggleSocials() {
+        		const socialLinks = document.getElementById('socialLinks');
+       			if (socialLinks.style.display === 'none') {
+            	socialLinks.style.display = 'flex'; // or 'block' depending on your layout
+        		} 		
+				else {
+            	socialLinks.style.display = 'none';
+      			}
+			function toggleSocials() {
+				alert('Socails toggled or contact info goes here');
+				}
+			}
+
+		</script>
+	</body>
+</html>

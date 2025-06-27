@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites - Place Your Order</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #690B22;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #690B22;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .order-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .menu-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .checkout-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #690B22;
+            border-bottom: 2px solid #690B22;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .item-info {
+            flex: 2;
+        }
+        
+        .item-controls {
+            flex: 1;
+            display: flex;file:///home/eyo/Desktop/webpage-tutorial/fd.html
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .item-price {
+            color: #690B22;
+            font-weight: bold;
+        }
+        
+        .item-desc {
+            font-size: 0.9rem;
+            color: #690B22;
+            margin-top: webpage5px;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background:#690B22;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity {
+            margin: 0 10px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .order-summary {
+            margin-bottom: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-top: 2px solid #690B22;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .checkout-btn {
+            background-color:#690B22;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #690B22;
+        }
+        
+        @media (max-width: 768px) {
+            .order-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> Daventina's Kitchen Delicious Bites</h1>
+            <p>Place Your Order</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="order-container">
+            <section class="menu-section">
+                <h2>Our Menu</h2>
+                
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Margherita Pizza</div>
+                        <div class="item-price">$12.99</div>
+                        <div class="item-desc">Classic pizza with tomato sauce, mozzarella, and basil</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity" value="0" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Spaghetti Carbonara</div>
+                        <div class="item-price">$14.99</div>
+                        <div class="item-desc">Pasta with creamy egg sauce, pancetta, and parmesan</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity" value="0" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Caesar Salad</div>
+                        <div class="item-price">$8.99</div>
+                        <div class="item-desc">Romaine lettuce, croutons, parmesan with Caesar dressing</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-control">
+                            <button class="qfile:///home/eyo/Desktop/webpage-tutorial/fd.htmluantity-btn minus">-</button>
+                            <input type="text" class="quantity" value="0" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Chocolate Lava Cake</div>
+                        <div class="item-price">$6.99</div>
+                        <div class="item-desc">Warm chocolate cake with a molten center, served with vanilla ice cream</div>
+                    </div>
+                    <div class="item-controls">
+                        <div class="quantity-control">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity" value="0" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="checkout-section">
+                <h2>Your Order</h2>
+                
+                <div class="order-summary">
+                    <div id="order-items">
+                        <!-- Order items will be added here by JavaScript -->
+                        <p>Your cart is empty</p>
+                    </div>
+                    <div class="total">
+                        Total: $<span id="total-amount">0.00</span>
+                    </div>
+                </div>
+                
+                <form class="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment">Payment Method</label>
+                        <select id="payment" required>
+                            <option value="">Select payment method</option>
+                            <option value="cash">Cash on Delivery</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="online">Online Payment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Instructions</label>
+                        <textarea id="notes" rows="2"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="checkout-btn">Place Order</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all quantity controls
+            const quantityControls = document.querySelectorAll('.quantity-control');
+            
+            // Initialize order data
+            const menuItems = [
+                { name: 'Margherita Pizza', price: 12.99, quantity: 0 },
+                { name: 'Spaghetti Carbonara', price: 14.99, quantity: 0 },
+                { name: 'Caesar Salad', price: 8.99, quantity: 0 },
+                { name: 'Chocolate Lava Cake', price: 6.99, quantity: 0 }
+            ];
+            
+            // Set up event listeners for quantity buttons
+            quantityControls.forEach((control, index) => {
+                const minusBtn = control.querySelector('.minus');
+                const plusBtn = control.querySelector('.plus');
+                const quantityInput = control.querySelector('.quantity');
+                
+                minusBtn.addEventListener('click', function() {
+                    if (menuItems[index].quantity > 0) {
+                        menuItems[index].quantity--;
+                        quantityInput.value = menuItems[index].quantity;
+                        updateOrderSummary();
+                    }
+                });
+                
+                plusBtn.addEventListener('click', function() {
+                    menuItems[index].quantity++;
+                    quantityInput.value = menuItems[index].quantity;
+                    updateOrderSummary();
+                });
+            });
+            
+            // Update order summary
+            function updateOrderSummary() {
+                const orderItemsContainer = document.getElementById('order-items');
+                let total = 0;
+                let hasItems = false;
+                
+                // Clear previous items
+                orderItemsContainer.innerHTML = '';
+                webpage
+                // Add current items
+                menuItems.forEach(item => {
+                    if (item.quantity > 0) {
+                        hasItems = true;
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'order-item';
+                        itemElement.innerHTML = `
+                            <span>${item.name} x${item.quantity}</span>
+                            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                        `;
+                        orderItemsContainer.appendChild(itemElement);
+                        total += item.price * item.quantity;
+                    }
+                });
+                
+                // If no items, show message
+                if (!hasItems) {
+                    orderItemsContainer.innerHTML = '<p>Your cart is empty</p>';
+                }
+                
+                // Update total
+                document.getElementById('total-amount').textContent = total.toFixed(2);
+            }
+            
+            // Form submission
+            document.querySelector('.checkout-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Check if there are items in the order
+                const total = parseFloat(document.getElementById('total-amount').textContent);
+                if (total <= 0) {
+                    alert('Please add items to your order before checking out');
+                    return;
+                }
+                
+                // In a real application, you would send this data to your server
+                const orderData = {
+                    customer: {
+                        name: document.getElementById('name').value,
+                        phone: document.getElementById('phone').value,
+                        address: document.getElementById('address').value
+                    },
+                    items: menuItems.filter(item => item.quantity > 0),
+                    payment: document.getElementById('payment').value,
+                    notes: document.getElementById('notes').value,
+                    total: total
+                };
+                
+                console.log('Order submitted:', orderData);
+                alert('Order placed successfully! Thank you for your purchase.');
+                
+                // Reset form (in a real app, you might redirect to a confirmation page)
+                this.reset();
+                menuItems.forEach(item => item.quantity = 0);
+                document.querySelectorAll('.quantity').forEach(input => input.value = '0');
+                updateOrderSummary();
+            });
+        });
+    </script>
+</body>
+</html>

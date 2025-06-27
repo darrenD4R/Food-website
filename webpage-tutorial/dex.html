@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+		<title>Food Delivery</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: 
+			}
+
+			.footer-p {
+				color: #fff;
+			}
+			
+			header {
+				background-color: #690B22;
+				color: white;
+				padding: 20px;
+				text-align: center;
+			}
+			.bouncy-text {
+				display:flex;
+				font-size: 48px;
+				text-align: center;
+				font-weight: bold;
+				color: white;
+			}
+			.bouncy-text span{
+				display: inline-block;
+				animation: bounce 1.5s infinite;
+				animation-delay: calc(var(--i) * 0.2s);
+			}
+			@keyframes bounce {
+				0%, 100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-20px);
+				}
+			}
+			nav {
+				background-color: #333;
+				overflow: hidden;
+			}
+			nav a {	
+				float: left;
+				display: block;
+				text-align: center;
+				padding: 14px 20px;
+				color: white;
+				text-decoration: none;
+			}
+			nav a: hover {
+				background-color: #575757;
+			}
+			.featured {
+				padding: 20px;
+				text-align: center;
+			}
+			.featured h2 {
+				color: #690B22;
+			}
+			.dishes {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+			.dish {
+				background-color: white;
+				border: 1px solid: #ddd;
+				border-radius: 8px;
+				width: 300px;
+				text-align: center;
+				padding: 20px;				
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+			.dish img {
+				max-width: 100%;
+				border-radius: 8px;
+			}
+			.dish h3 {
+				color: #333;
+			}
+			footer {
+				background-color: #333;
+				color: white;
+				padding: 10px;
+				text-align: center;
+				margin-top: 20px;
+			}
+			p {
+				color: #fff;
+				font-size: 16px;
+			}
+			h1 {
+				color: #fff;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>Daventina Food Delivery Service
+	Delicious food delivered to your door!
+	<body>
+		<div class="container-fluid font-">
+			<header>
+				<div class="bouncy-text">
+					<span style="--i: 0">
+						<h1> </h1>
+						<p> </p>
+					</span>
+				</div>
+			</header>
+		</div>
+
+		<div class="container-fluid">
+			<nav>
+				<a href="nextpage.html">Home</a>
+				<a href="#" onclick="loadChima()">Menu</a>
+				<a href="#" onclick="loadHh()">Contact Us</a>
+				<a href="#" onclick="loadFd()">About Us</a>
+			</nav>
+		</div>
+
+		<div class="container-fluid"  id="body">
+			<div class="featured">
+				<span style="--i: 0">Daventina food delivery service. Delicious food delivered to your door!</span>
+				<h2>Featured Dishes</h2>
+			</div>
+			<div class="dishes">
+				<div class="dish">
+					<img src="pasta.jpg" alt="Dish 1">
+					<h3>Pasta</h3>
+					<p>$12.99</p>
+				</div>
+				<div class="dish">
+					<img src="grilledchicken.avif" alt="Dish 2">
+					<h3>Grilled Chicken</h3>
+					<p>$15.99</p>
+				</div>
+				<div class="dish">
+					<img src="chineserice.avif" alt="Dish 3">
+					<h3>Chinese Rice</h3>
+					<p>$9.99</p>
+				</div>
+			</div>
+
+			<footer>
+				<p class="footer">&copy; 2025 Food delivery. All rights reserved.</p>
+			</footer>
+		</div>
+	</body>
+
+	
+</html>
+	
+<script>
+	function loadNextPage(){
+		const x = new XMLHttpRequest();
+		x.onload = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById('body').innerHTML = this.responseText;
+			}else{
+				alert('The Server returned an error: '+ this.status);
+			}
+		}; x.open('GET', 'nextpage.html', true); x.send();
+	}
+
+	function loadChima(){
+		const x = new XMLHttpRequest();
+		x.onload = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById('body').innerHTML = this.responseText;
+			}else{
+				alert('The Server returned an error: '+ this.status);
+			}
+		}; x.open('GET', 'Chima.html', true); x.send();
+	}
+
+	function loadHh(){
+		const x = new XMLHttpRequest();
+		x.onload = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById('body').innerHTML = this.responseText;
+			}else{
+				alert('The Server returned an error: '+ this.status);
+			}
+		}; x.open('GET', 'hh.html', true); x.send();
+	}
+
+	function loadFd(){
+		const x = new XMLHttpRequest();
+		x.onload = function(){
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById('body').innerHTML = this.responseText;
+			}else{
+				alert('The Server returned an error: '+ this.status);
+			}
+		}; x.open('GET', 'fd.html', true); x.send();
+	}
+
+
+	function submitForm(){
+	  // declare variables
+	  // const fullName = ''; 
+	  // fullName = document.getElementById('name').value;
+	  // const fullName = document.getElementById('name').value; // constant variables do not change their values.
+	  var fullName = document.getElementById('name').value;
+	  var emailAddress = document.getElementById('email').value;
+	  var comments = document.getElementById('comments').value;
+  
+	  if (fullName == '' || fullName.length < 3){
+		console.log("Name Error:", 'You have not entered your full name');
+		// alert('You have not entered your full name');
+		document.getElementById('alert').classList.add('error');
+		document.getElementById('alert').innerHTML = 'You have not entered your full name';
+		document.getElementById('name').focus();
+		setTimeout(()=>{
+		  //define what happens after the set time
+		  document.getElementById('alert').classList.remove('error');
+		  document.getElementById('alert').innerHTML = '';
+		}, 3000); // 1000 milli seconds = 1 second.
+		return false;
+	  }
+  
+	  if (emailAddress == '' || emailAddress.length < 3){
+		console.log("Email Error:", 'You have not entered your email address');
+		// alert('You have not entered your full name');
+		document.getElementById('alert').classList.add('error');
+		document.getElementById('alert').innerHTML = 'You have not entered your email address';
+		document.getElementById('email').focus();
+		setTimeout(()=>{
+		  //define what happens after the set time
+		  document.getElementById('alert').classList.remove('error');
+		  document.getElementById('alert').innerHTML = '';
+		}, 3000); // 1000 milli seconds = 1 second.
+		return false;
+	  }
+	  
+	  if (comments == '' || comments.length < 3){
+		console.log("Comments Error:", 'You have not entered your comments');
+		// alert('You have not entered your full name');
+		document.getElementById('alert').classList.add('error');
+		document.getElementById('alert').innerHTML = 'You have not entered your comments';
+		document.getElementById('comments').focus();
+		setTimeout(()=>{
+		  //define what happens after the set time
+		  document.getElementById('alert').classList.remove('error');
+		  document.getElementById('alert').innerHTML = '';
+		}, 3000); // 1000 milli seconds = 1 second.
+		return false;
+	  }
+  
+	  //submit the form
+	  document.getElementById('alert').classList.add('success');
+	  document.getElementById('alert').innerHTML = 'Submitting Form. Please wait...';
+	  console.log('Validation Status: ', 'All Items Validated successfully!')
+  
+	  setTimeout(()=>{
+		const x = new XMLHttpRequest(); var f = new FormData(); 
+		f.append('n', fullName); f.append('e', emailAddress); f.append('c', comments);
+		x.onreadystatechange = function(){
+		  if (this.status == 200){
+			console.log('Status: ', this.responseText);
+			//display success here
+			document.getElementById('page').innerHTML = this.responseText;
+  
+		  }else{
+			// display an error
+			console.log('Status: ', this.status, ' Ready State: ', this.readyState);
+			document.getElementById('alert').classList.remove('success');
+			document.getElementById('alert').classList.add('error');
+			document.getElementById('alert').innerHTML = 'The server returned an error.';
+		  }
+		}; x.open('POST', 'submitpage.php', true); x.send(f);
+	  }, 500);
+	}
+</script>

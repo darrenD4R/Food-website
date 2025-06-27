@@ -1,0 +1,123 @@
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      
+        background-image: url('webpage-tutorial/nm.jpg'); 
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+      }
+	    .animation-container-hh {
+        position: relative;
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 35px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0; /* Initially hidden */
+        transform: translateY(-50px); /* Start position above */
+        animation: fade-slide-in 2s ease-in-out forwards; /* Trigger animation */
+      }
+
+      /* Keyframes for fade and slide animation */
+      @keyframes fade-slide-in {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0); /* Final position */
+        }
+      }
+      footer {
+			background-color:lightblue;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			margin-top: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #555;
+        text-align: left;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: lightblue;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: lightblue;
+      }
+
+      .alertMessage{
+        text-align: center; 
+        background-color: #fff; 
+        color:#000; 
+        padding-top:12px; 
+        margin-top: 20px; 
+        height:30px; 
+        border-radius: 5px;
+      }
+      .error{ color: red;  }
+      .success {color: green; }
+    </style>
+  </header>
+  <body>
+	 <div id="page" class="animation-container-hh">
+      <h1>Contact Us</h1>
+      <!--form action="submitpage.html" method="get"-->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" aria-label="Name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" aria-label="Email" required />
+
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Enter your comments" aria-label="Comments" required></textarea>
+
+        <button type="submit" onclick="submitForm()">Submit</button>
+        <div class="alertMessage" id="alert"> &nbsp;</div>
+      <!--/form-->
+    </div>
+      <footer>
+        <div class="container-fluid">
+        <p class="footer-p">Thank you for visiting! Feel free to reach out.</p>
+        </div>
+      </footer>
+  </body>
+
+
+

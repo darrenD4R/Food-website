@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Delivery</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+		}
+		
+		header {
+			background-color: #690B22;
+			color: white;
+			padding: 20px;
+			text-align: center;
+		}
+		.bouncy-text {
+			display:flex;
+			font-size: 48px;
+			text-align: center;
+			font-weight: bold;
+			color: white;
+		}
+		.bouncy-text span{
+			display: inline-block;
+			animation: bounce 1.5s infinite;
+			animation-delay: calc(var(--i) * 0.2s);
+		}
+		@keyframes bounce {
+			0%, 100% {
+				transform: translateY(0);
+			}
+			50% {
+				transform: translateY(-20px);
+			}
+		}
+		nav {
+			background-color: #333;
+			overflow: hidden;
+		}
+		nav a {	
+			float: left;
+			display: block;
+			text-align: center;
+			padding: 14px 20px;
+			color: white;
+			text-decoration: none;
+		}
+		nav a: hover {
+			background-color: #575757;
+		}
+		.featured {
+			padding: 20px;
+			text-align: center;
+		}
+		.featured h2 {
+			color: #690B22;
+		}
+		.dishes {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		.dish {
+			background-color: white;
+			border: 1px solid: #ddd;
+			border-radius: 8px;
+			width: 300px;
+			text-align: center;
+			padding: 20px;				
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.dish img {
+			max-width: 100%;
+			border-radius: 8px;
+		}
+		.dish h3 {
+			color: #333;
+		}
+		footer {
+			background-color: #333;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+	<div class="bouncy-text">
+	<span style="--i: 0">
+		<h1>Daventina Food Delivery Service</h1>
+		<p>Delicious food delivered to your door!</p>
+	</span>
+	</header>
+	<nav>
+	
+		<a href="nextpage.html">Home</a>
+		<a href="Chima.html">Menu</a>
+		<a href="hh.html">Contact Us</a>
+		<a href=".html">About Us</a>
+	</nav>
+	<div class="featured"><span style="--i: 0">Daventina food delivery service.
+		Delicious food delivered to your door!</span>
+		<h2>Featured Dishes</h2>
+		
+		<div class="dishes">
+			<div class="dish">
+				<img src="pasta.jpg" alt="Dish 1">
+				<h3>Pasta</h3>
+				<p>$12.99</p>
+			</div>
+			<div class="dish">
+				<img src="grilledchicken.avif" alt="Dish 2">
+				<h3>Grilled Chicken</h3>
+				<p>$15.99</p>
+			</div>
+			<div class="dish">
+				<img src="chineserice.avif" alt="Dish 3">
+				<h3>Chinese Rice</h3>
+				<p>$9.99</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p>&copy; 2025 Food delivery. All rights reserved.</p>
+	</footer>
+</body>
+</html>
+	
